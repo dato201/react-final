@@ -1,17 +1,15 @@
+import { Logo } from '../../atoms/Logo/Logo';
+import { SignUpBar } from '../../molecules/SignUpBar/SignUpBar';
 import classes from './Header.module.css';
 
 function Header() {
 
-    return (
-      <header className={classes.Header}>
-        <a href=""><h1>syfai</h1></a>
-        <div>
-        <button className="">Log in</button>
-        <button className="">sign up</button>
-        </div>
-      </header>
-    )
-  }
-  
-  export { Header };
-  
+  return (
+    <header className={classes.Header}>
+      <Logo/>
+      <SignUpBar/>
+    </header>
+  )
+}
+
+export { Header };

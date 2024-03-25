@@ -2,7 +2,7 @@ import { Logo } from '../../atoms/Logo/Logo';
 import { SignUpBar } from '../../molecules/SignUpBar/SignUpBar';
 import classes from './Header.module.css';
 
-function Header() {
+const Header = (props) => {
 
   return (
     <header className={classes.Header}>

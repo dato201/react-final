@@ -5,8 +5,8 @@ function SignUpBar() {
 
   return (
       <div className={classes.SignUpBar}>
-        <AppLink to={'/'}><button>Log in</button></AppLink>
-        <AppLink to={'/'}><button>sign up</button></AppLink>
+        <button >Log in</button>
+        <AppLink to={'/sign-up'}><button>sign up</button></AppLink>
       </div>
   )
 }

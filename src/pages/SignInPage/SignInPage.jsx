@@ -1,15 +1,37 @@
+import { useMemo, useState } from 'react';
 import classes from './SignInPage.module.css';
 
 const SignInPage = (props) => {
+  const [style, setStyle] = useState("")
 
-    return (
-      <div className={classes.background_window}>
-        <div className={classes.SignInPage}>
-            <input type="text" />
-            <input type="text" />
-        </div>
-      </div>
-    )
+  const clk = () => {
+    setStyle("none")
   }
-  
-  export { SignInPage };
+
+  const myStyle = {
+    display: `${style}`
+  };
+
+  window.onclick = function () {
+    setStyle("none")
+  }
+
+  return (
+    <div style={myStyle} className={classes.background_window}>
+      <div className={classes.SignInPage}>
+
+        <div className={classes.div}>
+          <div></div>
+          <h2>Log In</h2>
+          <i onClick={clk} className="fa-solid fa-xmark clk_i"></i>
+        </div>
+
+        <input type="text" placeholder='User Name' />
+        <input type="password" placeholder='password' />
+        <button>submit</button>
+      </div>
+    </div>
+  )
+}
+
+export { SignInPage };

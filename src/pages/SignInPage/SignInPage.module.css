@@ -5,11 +5,36 @@
     position: absolute;
     z-index: 1;
     top: 0;
+    display: none;
 }
 
 .SignInPage {
-    width: 40%;
-    padding: 30px;
+    width: 300px;
+    padding: 60px;
+    padding-top: 30px;
     background-color: #ffffff;
     margin: 15% auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border-radius: 20px;
 }
+
+.div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.div h2 {
+    margin: 0;
+    font-size: 40px;
+}
+
+.div i {
+    font-size: 35px;
+}
+

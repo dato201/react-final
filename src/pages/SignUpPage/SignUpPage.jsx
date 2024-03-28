@@ -21,7 +21,7 @@ const SignUpPage = (props) => {
 
   const [error, setError] = useState(undefined);
   const [isLoading, setIsLoading] = useState(false);
-  
+
   const formik = useFormik({
     validationSchema: validation,
     initialValues: {
@@ -34,12 +34,12 @@ const SignUpPage = (props) => {
         setIsLoading(true);
         const response = await $api.post('/users', values);
         setIsLoading(false);
-        
-        if(response.status === 201){
-           navigate('/sign-in')
+
+        if (response.status === 201) {
+          navigate('/sign-in')
         }
       }
-      catch(e) {
+      catch (e) {
         setError(e.message);
         setIsLoading(false);
       }
@@ -47,14 +47,26 @@ const SignUpPage = (props) => {
   })
 
   const { isFormFieldInvalid } = useFormValidation(formik);
+  if (isFormFieldInvalid('firstName')) {
+    console.log("error");
+  }
   return (
     <div className={classes.SignUpPage}>
-        <h1 className={classes.h1}>Sign Up</h1>
-        <AppLink to={'/'}><i className="fa-solid fa-arrow-right-to-bracket"></i> Back home</AppLink>
-        <input type="text"  name="userName" value={formik.values.userName} onChange={formik.handleChange} className={classNames({ 'p-invalid': isFormFieldInvalid('userName') })} placeholder='user name'/>
-        <input type="email" placeholder='email'/>
-        <input type="password" placeholder='password'/>
-        <button className={classes.submit}  onClick={() => formik.handleSubmit()}>submit</button>
+      <h1 className={classes.h1}>Sign Up</h1>
+      <AppLink to={'/'}><i className="fa-solid fa-arrow-right-to-bracket"></i> Back home</AppLink>
+      <input type="text" name="userName" value={formik.values.userName}
+        onChange={formik.handleChange} className={classNames({ 'p-invalid': isFormFieldInvalid('userName') })} placeholder='user name' />
+      {isFormFieldInvalid('firstName') && (
+        <span className={classes.error}>{formik.errors.firstName}</span>
+      )}
+
+      <input type="email" name="email" value={formik.values.email}
+        onChange={formik.handleChange} className={classNames({ 'p-invalid': isFormFieldInvalid('email') })} placeholder='email' />
+
+      <input type="password" name="password" value={formik.values.password}
+        onChange={formik.handleChange} className={classNames({ 'p-invalid': isFormFieldInvalid('password') })} placeholder='password' />
+
+      <button type='submit' className={classes.submit} onClick={() => formik.handleSubmit()}>submit</button>
     </div>
   )
 }

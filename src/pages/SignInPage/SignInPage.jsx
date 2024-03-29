@@ -1,29 +1,16 @@
-import { useMemo, useState } from 'react';
 import classes from './SignInPage.module.css';
+import { AppLink } from '../../atoms/AppLink/AppLink';
 
 const SignInPage = (props) => {
-  const [style, setStyle] = useState("")
-
-  const clk = () => {
-    setStyle("none")
-  }
-
-  const myStyle = {
-    display: `${style}`
-  };
-
-  window.onclick = function () {
-    setStyle("none")
-  }
 
   return (
-    <div style={myStyle} className={classes.background_window}>
+    <div className={classes.background_window}>
       <div className={classes.SignInPage}>
 
         <div className={classes.div}>
           <div></div>
           <h2>Log In</h2>
-          <i onClick={clk} className="fa-solid fa-xmark clk_i"></i>
+          <AppLink to={'/'}><i style={{ color: '#213547' }} className="fa-solid fa-xmark clk_i"></i></AppLink>
         </div>
 
         <input type="text" placeholder='User Name' />

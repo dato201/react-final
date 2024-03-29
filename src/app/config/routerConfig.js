@@ -1,7 +1,7 @@
 import { AboutPage } from "../../pages/AboutPage/AboutPage";
 import { MainPage } from "../../pages/MainPage/MainPage";
 import { ProfilePage } from '../../pages/ProfilePage/ProfilePage';
-// import { SignInPage } from "../../pages/SignInPage/SigninPage";
+import { SignInPage } from "../../pages/SignInPage/SignInPage";
 import { SignUpPage } from "../../pages/SignUpPage/SignUpPage";
 
 export const routerConfig = [
@@ -29,10 +29,10 @@ export const routerConfig = [
     element: SignUpPage,
     header: false,
   },
-  // {
-  //   id: 4,
-  //   path: '/log-in',
-  //   element: SignInPage,
-  //   header: false,
-  // },
+  {
+    id: 4,
+    path: '/log-in',
+    element: SignInPage,
+    header: false,
+  },
 ]

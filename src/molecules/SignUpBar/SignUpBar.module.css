@@ -1,0 +1,26 @@
+.SignUpBar {
+    display: flex;
+    gap: 8px;
+}
+
+.avatarContainer {
+    display: flex;
+    gap: 20px;
+}
+
+.avatarContainer div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    font-size: 25px;
+    font-weight: 500;
+    color: white;
+    background: green;
+    border-radius: 100%;
+}
+
+.avatarContainer h3 {
+    margin: 0;
+}

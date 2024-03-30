@@ -66,6 +66,18 @@ input {
   background-color: var(--wite);
 }
 
+.error_input {
+  background-color: #ff00001f;
+}
+
+.error_input2 {
+  background-color: #f98787;
+}
+
+.error_input2::placeholder {
+  color: red;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
